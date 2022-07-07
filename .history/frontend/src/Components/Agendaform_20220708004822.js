@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import axios from "axios";
 import { Form, Card, Button } from 'react-bootstrap';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -10,71 +9,69 @@ export default function Home() {
     const [title, seTitle] = useState(" ");
     const [description, setDescription] = useState(" ");
     const [status, setStatus] = useState(" ");
+    const [date, setDate] = useState(" ");
+    const [time, setTime] = useState(" ");
+
+    const [startDate, setStartDate] = useState(new Date());
+    const [value, onChange] = useState('10:00');
 
 
-    const [date, setStartDate] = useState(new Date());
-    const [time, setTime] = useState('10:00');
-
-
-    function sendData(e) {
-        if (!(description.trim().length > 5)) {
-            alert("Invalid 'description' value! Length must be grater 5 chracters")
-            return
-        } else if (!(title.trim().length > 2)) {
-            alert("Invalid 'title' value! Title must be grater than length 2 chracters")
-            return
-        }
-        e.preventDefault();
-
-        const newAgenda = {
-            title,
-            description,
-            status,
-            date,
-            time
-        }
-
-        axios.post("http://localhost:5000/agenda", newAgenda).then(() => {
-            ("Agenda added")
-            seTitle('');
-            setDescription('');
-            setStatus('');
-            setStartDate('');
-            setTime('');
-
-
-
-        }).catch((err) => {
-            alert("error");
-        })
+    function sendData(e){  
+        if(!(description.trim().length > 5)){
+          alert("Invalid 'description' value! Length must be grater than 5")
+          return
+      }else if(!(title.trim().length > 2)){
+        alert("Invalid 'title' value! Title must be grater than length 2")
+        return
     }
+        e.preventDefault();
+        
+        const newTimetable ={
+          from,
+          to,
+          time
+        }
+    
+        axios.post("http://localhost:5000/time/add",newTimetable).then(()=>{
+          ("Timetable added")
+          setFrom('');
+          setTo('');
+          settime('');
+          alert("Timetable added added");
+          window.location = `/viewTimetable`;
+          
+    
+        }).catch((err)=>{
+          alert("error");
+        })
+      }  
     return (
-        <div style={{ paddingLeft: "2vh", paddingBottom: "5vh", paddingTop: "10vh" }}>
-            <Card style={{ width: '40rem' }}>
+        <div style={{ paddingLeft: "2vh", paddingBottom: "15vh", paddingTop: "15vh" }}>
+            <Card style={{ width: '58rem' }}>
                 <Card.Body>
-                    <Form onSubmit={sendData}>
+                    <Form>
                         <div style={{ paddingBottom: "1vh", paddingTop: "2vh" }}>
                             <Form.Label>Title</Form.Label>
-                            <Form.Control placeholder="Enter the title" onChange={(e) => seTitle(e.target.value)}
+                            <Form.Control placeholder="Enter the title"
                             />
                         </div>
                         <div style={{ paddingBottom: "1vh", paddingTop: "2vh" }}>
                             <Form.Label>Description</Form.Label>
-                            <Form.Control as="textarea" rows={3} placeholder="Enter the description" onChange={(e) => setDescription(e.target.value)}
+                            <Form.Control as="textarea" rows={3} placeholder="Enter the description"
                             />
                         </div>
                         <div style={{ paddingBottom: "1vh", paddingTop: "2vh" }}>
                             <Form.Label>Status</Form.Label>
-                            <Form.Control placeholder="Enter the status" onChange={(e) => setStatus(e.target.value)}
+                            <Form.Control placeholder="Enter the status"
                             />
                         </div>
                         <div style={{ paddingBottom: "1vh", paddingTop: "2vh" }}>
                             <Form.Label>Date</Form.Label>
-                            <DatePicker selected={date} onChange={(date) => setStartDate(date)} />
+                            <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
                         </div>
                         <div style={{ paddingBottom: "1vh", paddingTop: "2vh" }}>
-                            <Form.Label>Time</Form.Label><br />
-                            <TimePicker onChange={setTime} value={time} />
+                            <Form.Label>Time</Form.Label><br/>
+                            <TimePicker onChange={onChange} value={value} />
                         </div>
 
                         <div style={{ paddingBottom: "1vh", paddingTop: "2vh" }}>

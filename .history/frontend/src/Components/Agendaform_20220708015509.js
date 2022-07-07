@@ -39,7 +39,6 @@ export default function Home() {
             setStatus('');
             setStartDate('');
             setTime('');
-            window.location = `/view`;
 
 
 

@@ -8,7 +8,7 @@ function App() {
     <BRouter>
     <Routes>
       <Route exact path="/" element={<Addform />} />
-      <Route exact path="/view" element={<Viewform />} />
+      <Route exact path="/" element={<Viewform />} />
 
       
     </Routes>

@@ -21,7 +21,8 @@ const agendaSchema = new Schema({
     date : {
         type: String,
         required: true
-    },
+    }
+    
     time : {
         type: String,
         required: true

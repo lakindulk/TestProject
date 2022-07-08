@@ -6,7 +6,6 @@ import Navbar from "../Components/NavBar";
 import Footer from "../Components/Footer";
 
 
-
 export default function Addform() {
   return (
     <div>
@@ -19,7 +18,6 @@ export default function Addform() {
           </Row>
         </Container>
       </div>
-
       <Footer />
     </div>
   );

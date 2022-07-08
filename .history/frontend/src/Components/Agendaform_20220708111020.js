@@ -4,7 +4,13 @@ import { Form, Card, Button } from 'react-bootstrap';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import TimePicker from 'react-time-picker';
-
+import TextField from '@mui/material/TextField';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { MobileDatePicker } from '@mui/x-date-pickers/MobileDatePicker';
+import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
+import Stack from '@mui/material/Stack';
 
 export default function Home() {
     const [title, seTitle] = useState(" ");
@@ -48,7 +54,7 @@ export default function Home() {
         })
     }
     return (
-        <div style={{ paddingLeft: "2vh", paddingBottom: "5vh", paddingTop: "10vh" }}>
+        <div style={{ paddingLeft: "2vh", paddingBottom: "5vh", paddingTop: "5vh" }}>
             <Card style={{ width: '40rem' }}>
                 <Card.Body>
                     <Form onSubmit={sendData}>
@@ -59,7 +65,7 @@ export default function Home() {
                         </div>
                         <div style={{ paddingBottom: "1vh", paddingTop: "2vh" }}>
                             <Form.Label>Description</Form.Label>
-                            <Form.Control as="textarea" rows={3} placeholder="Enter the description (More than five characters)" onChange={(e) => setDescription(e.target.value)}
+                            <Form.Control as="textarea" rows={3} placeholder="Enter the description" onChange={(e) => setDescription(e.target.value)}
                             />
                         </div>
                         <div style={{ paddingBottom: "1vh", paddingTop: "2vh" }}>
@@ -69,7 +75,7 @@ export default function Home() {
                         </div>
                         <div style={{ paddingBottom: "1vh", paddingTop: "2vh" }}>
                             <Form.Label>Date</Form.Label>
-                            <DatePicker selected={date} onChange={(date) => setStartDate(date)}  />
+                            <DatePicker selected={date} onChange={(date) => setStartDate(date)} />
                         </div>
                         <div style={{ paddingBottom: "1vh", paddingTop: "2vh" }}>
                             <Form.Label>Time</Form.Label><br />

@@ -1,10 +1,9 @@
 import React, { useState } from "react"
 import axios from "axios";
 import { Form, Card, Button } from 'react-bootstrap';
-import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import TimePicker from 'react-time-picker';
-
+import {  DatePicker } from "antd";
 
 export default function Home() {
     const [title, seTitle] = useState(" ");
@@ -69,7 +68,7 @@ export default function Home() {
                         </div>
                         <div style={{ paddingBottom: "1vh", paddingTop: "2vh" }}>
                             <Form.Label>Date</Form.Label>
-                            <DatePicker selected={date} onChange={(date) => setStartDate(date)}  />
+                            <DatePicker selected={date} onChange={(date) => setStartDate(date)} />
                         </div>
                         <div style={{ paddingBottom: "1vh", paddingTop: "2vh" }}>
                             <Form.Label>Time</Form.Label><br />

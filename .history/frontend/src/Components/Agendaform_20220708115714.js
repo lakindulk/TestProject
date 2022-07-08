@@ -69,7 +69,7 @@ export default function Home() {
                         </div>
                         <div style={{ paddingBottom: "1vh", paddingTop: "2vh" }}>
                             <Form.Label>Date</Form.Label>
-                            <DatePicker selected={date} onChange={(date) => setStartDate(date)}  />
+                            <DatePicker selected={date} onChange={(date) => setStartDate(date)} dateFormat="Pp" />
                         </div>
                         <div style={{ paddingBottom: "1vh", paddingTop: "2vh" }}>
                             <Form.Label>Time</Form.Label><br />

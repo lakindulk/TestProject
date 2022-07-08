@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import Agendaform from "../Components/Agendaform";
 import Addformslide from "../Components/Addformslide";
-import Navbar from "../Components/NavBar";
+import Navbar from "../Components/Navbar";
 
 
 export default function Addform() {

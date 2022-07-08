@@ -25,7 +25,7 @@ export default function Addform() {
                     </Row>
                 </Container>
             </div>
-            <Footer />
+            <Footer/>
         </div>
 
     );

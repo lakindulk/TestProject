@@ -4,7 +4,8 @@ import Agendaform from "../Components/Agendaform";
 import Addformslide from "../Components/Addformslide";
 import Navbar from "../Components/NavBar";
 import Footer from "../Components/Footer";
-
+import {  DatePicker } from "antd";
+import "antd/dist/antd.css";
 
 
 export default function Addform() {
@@ -19,6 +20,7 @@ export default function Addform() {
           </Row>
         </Container>
       </div>
+      <DatePicker />
 
       <Footer />
     </div>

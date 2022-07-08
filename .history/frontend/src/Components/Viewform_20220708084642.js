@@ -69,7 +69,7 @@ function Viewform(props) {
     return (
 
 
-        <div style={{ paddingBottom: "5vh", paddingTop: "5vh" }}>
+        <div style={{ paddingBottom: "5vh", paddingTop: "12vh" }}>
 
 
             <h2>Agenda Management</h2>

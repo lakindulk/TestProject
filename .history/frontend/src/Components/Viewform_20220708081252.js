@@ -52,7 +52,7 @@ function Viewform(props) {
             _id, title, description, status, date, time
         }
 
-        axios.put("http://localhost:5000/agenda/" + _id, newAgenda).then(() => {
+        axios.put("http://localhost:5000/agenda/"+_id, newAgenda).then(() => {
             seTitle('');
             setDescription('');
             setStatus('');
@@ -67,23 +67,20 @@ function Viewform(props) {
 
 
     return (
-
-
         <div style={{ paddingBottom: "5vh", paddingTop: "5vh" }}>
-
-
-            <h2>Agenda Management</h2>
-            <div style={{ paddingLeft: "1vh", paddingBottom: "1vh", paddingTop: "1vh", paddingRight: "1vh" }}>
-                <div style={{ paddingBottom: "1vh" }}>
-
-                    <input type="text" placeholder="Search table from 'Title' "
-                        onChange={(e) => {
-                            setSearch(e.target.value);
-                        }} />
-                </div>
+            <div style={{ paddingLeft: "1vh", paddingBottom: "1vh", paddingTop: "1vh" }} >
+                <a href="/">
+                    <Button variant="secondary" >Add Agenda</Button>{' '}
+                </a>
+            </div>
+            <div style={{ paddingLeft: "1vh", paddingBottom: "1vh", paddingTop: "1vh", paddingRight: "4vh" }}>
                 <Table striped bordered hover >
-
                     <thead>
+
+                        <input type="text" placeholder="Search table from 'Title' "
+                            onChange={(e) => {
+                                setSearch(e.target.value);
+                            }} />
 
                         <tr>
 
@@ -110,26 +107,26 @@ function Viewform(props) {
 
                         }).map((Agenda) => {
 
-                            return (
-                                <tr key={Agenda._id}>
-                                    <td>{Agenda.title}</td>
-                                    <td>{Agenda.description}</td>
-                                    <td>{Agenda.status}</td>
-                                    <td>{Agenda.date}</td>
-                                    <td>{Agenda.time}</td>
+                                return (
+                                    <tr key={Agenda._id}>
+                                        <td>{Agenda.title}</td>
+                                        <td>{Agenda.description}</td>
+                                        <td>{Agenda.status}</td>
+                                        <td>{Agenda.date}</td>
+                                        <td>{Agenda.time}</td>
 
-                                    <td>
-                                        <Button variant="outline-success" onClick={() => handleShow(Agenda._id, Agenda.title, Agenda.description, Agenda.status, Agenda.date, Agenda.time)} >Edit</Button>
-                                    </td>
+                                        <td>
+                                            <Button variant="outline-success" onClick={() => handleShow(Agenda._id, Agenda.title, Agenda.description, Agenda.status, Agenda.date, Agenda.time)} >Edit</Button>
+                                        </td>
 
-                                    <td>
-                                        <Button variant="outline-danger" onClick={() => onDelete(Agenda._id)}>Delete</Button>
+                                        <td>
+                                            <Button variant="outline-danger" onClick={() => onDelete(Agenda._id)}>Delete</Button>
 
-                                    </td>
-                                </tr>
+                                        </td>
+                                    </tr>
 
-                            );
-                        })}
+                                );
+                            })}
                     </tbody>
                 </Table>
                 <Modal show={show} onHide={handleClose}>
@@ -138,7 +135,7 @@ function Viewform(props) {
                     </Modal.Header>
                     <Modal.Body>
                         <Form >
-                            <div style={{ paddingBottom: "3vh", paddingTop: "1vh", paddingLeft: "3vh", paddingRigh: "3vh" }}>
+                            <div style={{ paddingBottom: "3vh", paddingTop: "1vh", paddingLeft:"3vh",paddingRigh:"3vh" }}>
                                 <Form.Label>Title</Form.Label>
                                 <Form.Control placeholder="title"
                                     value={title}
@@ -161,13 +158,13 @@ function Viewform(props) {
                             </div>
 
                             <div style={{ paddingBottom: "1vh", paddingTop: "2vh" }}>
-                                <Form.Label>Date</Form.Label>
-                                <Form.Control placeholder="date"
+                            <Form.Label>Date</Form.Label>
+                            <Form.Control placeholder="date"
                                     value={date}
                                     onChange={(e) => setStartDate(e.target.value)} />                        </div>
-                            <div style={{ paddingBottom: "1vh", paddingTop: "2vh" }}>
-                                <Form.Label>Time</Form.Label><br />
-                                <Form.Control placeholder="time"
+                        <div style={{ paddingBottom: "1vh", paddingTop: "2vh" }}>
+                            <Form.Label>Time</Form.Label><br />
+                            <Form.Control placeholder="time"
                                     value={time}
                                     onChange={(e) => setTime(e.target.value)} />                      </div>
 
@@ -175,7 +172,7 @@ function Viewform(props) {
 
 
                             <Button variant="outline-success" onClick={update}>Edit Timetables</Button>
-
+                  
                         </Form>
                     </Modal.Body>
                     <Modal.Footer>

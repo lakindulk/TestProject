@@ -6,13 +6,13 @@ import { BrowserRouter as BRouter, Route, Routes } from "react-router-dom";
 function App() {
   return (
     <BRouter>
-      <Routes>
-        <Route exact path="/" element={<Addform />} />
-        <Route exact path="/view" element={<Viewagenda />} />
+    <Routes>
+      <Route exact path="/" element={<Addform />} />
+      <Route exact path="/view" element={<Viewagenda />} />
 
-
-      </Routes>
-
+      
+    </Routes>
+    
     </BRouter>
   );
 }

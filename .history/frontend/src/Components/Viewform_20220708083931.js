@@ -71,19 +71,21 @@ function Viewform(props) {
 
         <div style={{ paddingBottom: "5vh", paddingTop: "5vh" }}>
 
-
-            <h2>Agenda Management</h2>
-            <div style={{ paddingLeft: "1vh", paddingBottom: "1vh", paddingTop: "1vh", paddingRight: "1vh" }}>
-                <div style={{ paddingBottom: "1vh" }}>
-
-                    <input type="text" placeholder="Search table from 'Title' "
-                        onChange={(e) => {
-                            setSearch(e.target.value);
-                        }} />
-                </div>
+            
+            <div style={{ paddingLeft: "1vh", paddingBottom: "1vh", paddingTop: "1vh" }} >
+                <a href="/">
+                    <Button variant="secondary" >Add Agenda</Button>{' '}
+                </a>
+            </div>
+            <div style={{ paddingLeft: "1vh", paddingBottom: "1vh", paddingTop: "1vh", paddingRight: "2vh" }}>
                 <Table striped bordered hover >
-
                     <thead>
+
+                        <input type="text" placeholder="Search table from 'Title' "
+                            onChange={(e) => {
+                                setSearch(e.target.value);
+                            }} />
+            
 
                         <tr>
 

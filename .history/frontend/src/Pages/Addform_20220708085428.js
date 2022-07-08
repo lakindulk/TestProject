@@ -1,8 +1,7 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Navbar } from 'react-bootstrap';
 import Agendaform from "../Components/Agendaform";
 import Addformslide from "../Components/Addformslide";
-import Navbar from "../Components/NavBar";
 
 
 export default function Addform() {

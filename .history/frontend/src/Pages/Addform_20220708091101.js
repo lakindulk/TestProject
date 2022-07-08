@@ -8,7 +8,7 @@ import Navbar from "../Components/NavBar";
 export default function Addform() {
   return (
     <div>
-      <Navbar/>
+      <Navbar></Navbar>
     <div style={{paddingTop:"1vh",paddingBottom:"1vh"}}>
       <Container>
         <Row>

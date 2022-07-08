@@ -72,8 +72,8 @@ function Viewform(props) {
         <div style={{ paddingBottom: "5vh", paddingTop: "5vh" }}>
 
 
-            <h2>Agenda Management</h2>
-            <div style={{ paddingLeft: "1vh", paddingBottom: "1vh", paddingTop: "1vh", paddingRight: "1vh" }}>
+            
+            <div style={{ paddingLeft: "1vh", paddingBottom: "1vh", paddingTop: "1vh", paddingRight: "2vh" }}>
                 <div style={{ paddingBottom: "1vh" }}>
 
                     <input type="text" placeholder="Search table from 'Title' "
